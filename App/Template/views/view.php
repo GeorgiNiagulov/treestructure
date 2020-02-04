@@ -1,24 +1,18 @@
-<?php /** @var \App\Data\CategoryDTO[] $data */ ?>
+<?php /** @var \App\Data\CategoryDTO[] $data */
 
-<table border="1">
-    <thead>
-    <tr>
-        <td>Level 1</td>
-        <td>Level 2</td>
-        <td>Level 3</td>
-        <td>Level 4</td>
-    </tr>
-    </thead>
+$tree = iterator_to_array($data, true);
 
-    <tbody>
-        <?php foreach($data as $CategoryDTO): ?>
-            <tr>
-                <td><?= $CategoryDTO->getName(); ?></td>
-                <td><?= $CategoryDTO->getName(); ?></td>
-                <td><?= $CategoryDTO->getName(); ?></td>
-                <td><?= $CategoryDTO->getName(); ?></td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
+function generateTree ($tree,$parentId){
+    echo '<ul>';
+    foreach ($tree as $value){
+        if($parentId == $value['parentId']){
+            echo  '<li>'.$value['name'].'</li>';
+            generateTree($tree,$value['id']);
+        }
+    }
+    echo '</ul>';
+}
 
-</table>
+generateTree($tree,0);
+
+?>

@@ -3,9 +3,9 @@
 namespace App\Data;
 
 class CategoryDTO{
-  private $id;
-  private $parentId;
-  private $name;
+  public $id;
+  public $parentId;
+  public $name;
 
     /**
      * Get the value of Id

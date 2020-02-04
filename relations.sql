@@ -12,7 +12,23 @@ CREATE TABLE IF NOT EXISTS `category` (
   `name` varchar(255) NOT NULL,
   `parent_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` (`id`, `name`, `parent_id`) VALUES
+	(1, 'Bulgaria', 0),
+	(2, 'World', 0),
+	(3, 'Other', 0),
+	(4, 'Politics', 1),
+	(5, 'Nature', 2),
+	(6, 'Communications', 3),
+	(7, 'Regions', 4),
+	(8, 'Tree', 5),
+	(9, 'People', 6),
+	(10, 'Sofia', 7),
+	(11, 'Leaf', 8),
+	(12, 'Person', 9);
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

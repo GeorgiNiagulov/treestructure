@@ -24,7 +24,7 @@ class CategoryHttpHandler extends HttpHandlerAbstract{
 
       public function view()
       {
-              $this->render("views/view");
+              $this->render("views/view", $this->categoryService->getAll());
       }
 
 }

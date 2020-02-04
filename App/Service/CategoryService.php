@@ -21,6 +21,6 @@ class CategoryService implements CategoryServiceInterface
      */
     public function getAll(): \Generator
     {
-       return $this->CategoryRepository->findAll();
+       return  $this->CategoryRepository->findAll();
     }
 }
